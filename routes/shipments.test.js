@@ -22,4 +22,15 @@ describe("POST /", function () {
       .send();
     expect(resp.statusCode).toEqual(400);
   });
+
+  test("invalid", async function () {
+    const resp = await request(app).post("/shipments").send({
+      productId: 900,
+      name: "Test Tester",
+      addr: "100 Test St",
+      zip: "12345-6789",
+    });
+    // expect(resp.statusCode).toEqual(400);
+    expect(resp.body).toEqual({ error: { message: "Bad Request", status: 400 } });
+  });
 });
