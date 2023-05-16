@@ -5,9 +5,10 @@
     "description": "Order for a shipment.",
     "type": "object",
     "properties": {
-      "productId": {"type": "integer",
-                    "minimum": 1000
-                   },
+      "productId": {
+        "type": "integer",
+        "minimum": 1000
+      },
       "name": {"type": "string"},
       "addr": {"type": "string"},
       "zip": {"type": "string"}
