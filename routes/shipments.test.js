@@ -31,6 +31,8 @@ describe("POST /", function () {
       zip: "12345-6789",
     });
     // expect(resp.statusCode).toEqual(400);
-    expect(resp.body).toEqual({ error: { message: "Bad Request", status: 400 } });
+    expect(resp.body).toEqual({ error: { message: [
+			"instance.productId must be greater than or equal to 1000"
+		], status: 400 } });
   });
 });
